@@ -1,16 +1,61 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortcut Function</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
 
+        #result {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+    <h1>Shortcut Function</h1>
+
+    <label for="string1">String 1:</label>
+    <input type="text" id="string1" />
+
+    <label for="string2">String 2:</label>
+    <input type="text" id="string2" />
+
+    <button onclick="showShortcut()">Get Shortcut</button>
+
+    <div id="result"></div>
+
+    <script>
+        function shortcut(str1, str2) {
+            // Check if either of the input strings is empty
+            if (str1 === '' || str2 === '') {
+                return '';
+            }
+
+            // Get the initial letters of the strings and convert to uppercase
+            const initialLetters = str1[0].toUpperCase() + str2[0].toUpperCase();
+            
+            return initialLetters;
+        }
+
+        function showShortcut() {
+            // Get input values
+            const string1 = document.getElementById('string1').value;
+            const string2 = document.getElementById('string2').value;
+
+            // Call the shortcut function
+            const result = shortcut(string1, string2);
+
+            // Display the result
+            document.getElementById('result').textContent = `Shortcut: ${result}`;
+        }
+    </script>
 
 </body>
-
 </html>
